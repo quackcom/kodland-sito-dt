@@ -1,0 +1,201 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font family */
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #2b2b2b;
+    margin: 0;
+    padding: 0;
+}
+.webtitle {
+    text-align: center;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.webtitle:hover {
+    font-size: 40px;
+    animation: color-change 1s;
+    color: #0ada7c;
+}
+
+h1 {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    color: #0b3c5d;
+    font-size: 36px;
+    text-transform: uppercase;
+    border-bottom: 4px solid #d9534f;
+    padding-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #323232;
+    font-size: 22px;
+    border-left: 5px solid #d9534f; /* Red bar next to the title */
+    padding-left: 12px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #4a4a4a;
+    text-align: justify;
+}
+
+.news-block {
+    display: flex;
+    gap: 300px; /* Known space between text and image */
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.news-content {
+    flex: 1; /* All the needed space */
+}
+
+.donna-pensante {
+    width: 250px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
+    mix-blend-mode: multiply;
+
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+    perspective: 1000px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.donna-pensante:hover {
+    /* Inclina l'immagine leggermente all'indietro (-5deg su asse X) e verso destra (8deg su asse Y) */
+    transform: rotateX(-5deg) rotateY(8deg) scale(1.02); 
+  
+    /* Aumenta l'ombra per enfatizzare il distacco 3D dallo sfondo */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+ul {
+    list-style: none; /* No more points */
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 0 4px 4px 0;
+    font-size: 15px;
+}
+
+ul li strong {
+    color: #0b3c5d;
+}
+
+h1.articlename {
+    color: #333333;
+    font-size: 30px;
+    text-transform: none;
+    border-bottom: none;
+    letter-spacing: normal;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes color-change {
+  0%   { color: #0b3c5d; }
+  25%  { color: #0e79c1; }
+  75%  { color: #02ffd5; }
+  100% { color: #0ada7c; }
+}
+
+.meteoblue {
+    display: block;       /* To solid block */
+    margin-left: auto;    /* Move to right */
+    margin-right: 0;      /* Anchor to right */
+  
+    /* Correct dimensions */
+    width: 350px;
+    height: 350px;
+}
+
+/* La griglia che conterrà le card degli articoli */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LA CARD VERA E PROPRIA */
+.article-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Effetto al passaggio del mouse (Hover) */
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Area dell'immagine */
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Contenitore interno dei testi */
+.card-content {
+  padding: 24px;
+}
+
+/* Tag della categoria (Tecnologia & Informazione) */
+.category {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #0066cc;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+/* Titolo dell'articolo */
+.card-content h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.35rem;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+/* Descrizione / Domanda dell'articolo */
+.card-content p {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
