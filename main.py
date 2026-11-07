@@ -29,4 +29,11 @@ def head_or_tail():
     choice = "Head" if range == 0 else "Tail"
     return f'<p> <strong> {choice} </strong> <p>'
 
+@app.route("/password-generator")
+def passw_generator():
+    tokens = r"""ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+}{":?><,./;[]=-`~'"""
+    password = ''.join(random.choice(tokens) for i in range(12))
+    return f'<p> Password: <strong> {password} </strong> <p>'
+
+
 app.run(debug=True)
